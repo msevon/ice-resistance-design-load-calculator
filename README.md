@@ -2,15 +2,11 @@
 
 This repository contains Rust code for performing essential calculations relevant to icebreaker design. These calculations include determining level ice resistance, design ice load, and ice belt plate thickness, among others.
 
-## Getting started
-
-To use this code for icebreaker design calculations, follow these steps:
-
-### Prerequisites
+## Prerequisites
 
 - [Rust](https://www.rust-lang.org/tools/install): Ensure Rust is installed on your system.
 
-### Installation
+## Installation
 
 1. Clone the repository to your local machine:
 
