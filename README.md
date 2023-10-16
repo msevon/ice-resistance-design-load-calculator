@@ -9,15 +9,15 @@ This repository contains Rust code for performing essential calculations relevan
 ## Installation
 
 1. Clone the repository to your local machine:
-
-    git clone https://github.com/your-username/icebreaker_design_calculations.git
+    
+    git clone https://github.com/msevon/icebreaker_design_calculations.git
    
 3. Navigate to the project directory:
-
+    
     cd icebreaker_design_calculations
    
 3. Build the Rust project:
-
+    
     cargo build --release
 
 ## Usage
