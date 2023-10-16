@@ -13,16 +13,12 @@ This repository contains Rust code for performing essential calculations relevan
         git clone https://github.com/msevon/icebreaker_design_calculations.git
    
 3. Navigate to the project directory:
-    
-    cd icebreaker_design_calculations
+
+        cd icebreaker_design_calculations
    
 3. Build the Rust project:
 
-       cargo build --release
-
-   cd icebreaker_design_calculations
-
-       git clone https://github.com/msevon/icebreaker_design_calculations.git
+        cargo build --release
 
 ## Usage
 
