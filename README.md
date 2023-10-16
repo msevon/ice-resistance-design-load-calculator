@@ -24,7 +24,7 @@ To use this code for icebreaker design calculations, follow these steps:
 
    cargo build --release
 
-### Usage
+## Usage
 
 Run the compiled program:
     
@@ -34,7 +34,7 @@ Follow the prompts to input the necessary parameters for your icebreaker design.
 
 The program will perform the calculations and display the results.
 
-### Features
+## Features
 
 Level ice resistance calculation
 Design ice load calculation
