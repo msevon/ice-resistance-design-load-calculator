@@ -20,6 +20,10 @@ This repository contains Rust code for performing essential calculations relevan
     
     cargo build --release
 
+       cargo run --release
+
+       cargo run --release
+
 ## Usage
 
 Run the compiled program:
