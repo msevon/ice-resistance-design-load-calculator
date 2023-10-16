@@ -22,7 +22,9 @@ This repository contains Rust code for performing essential calculations relevan
 
        cargo build --release
 
-       cargo run --release
+   cd icebreaker_design_calculations
+
+       git clone https://github.com/msevon/icebreaker_design_calculations.git
 
 ## Usage
 
