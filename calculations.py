@@ -39,8 +39,8 @@ def get_valid_input(prompt):
             print("Invalid input. Please enter a valid non-negative numeric value.")
 
 # Function to calculate design ice load
-def calculate_design_ice_load(length, width, deadweight_ui, polar_class):
-    # Step 2: Define class factors for all ice classes
+def calculate_design_ice_load(length_ui, deadweight_ui, polar_class, beta_prime, alpha, gamma):
+    # Step 1: Define class factors for all ice classes
     class_factors = {
         "PC1": (17.69, 68.60, 2.01, 250, 7.46),
         "PC2": (9.89, 46.80, 1.75, 210, 5.46),
@@ -64,18 +64,18 @@ def calculate_design_ice_load(length, width, deadweight_ui, polar_class):
         print("\nInvalid Polar Class. Please enter a valid Polar Class. Ending calculation...")
         return
 
-    # Step 3: Initalize the bow
+    # Step 2: Initalize the bow
     bow = {
             "name": "Bow",
-            "beta_prime": float(input("\nEnter the normal frame angle at upper ice waterline for the Bow (β' in degrees): ")),
-            "alpha": float(input("Enter the upper ice waterline angle for the Bow (α in degrees): ")),
-            "gamma": float(input("Enter the buttock angle at upper ice waterline for the Bow (γ in degrees): ")),
-            "x": 0.25 * length,
+            "beta_prime": beta_prime,
+            "alpha": alpha,
+            "gamma": gamma,
+            "x": 0.25 * length_ui,
             "Dui": deadweight_ui,
         }
 
 
-    # Step 4: Calculate fai, Fi, ARi, Qi, and Pi
+    # Step 3: Calculate fai, Fi, ARi, Qi, and Pi
     x = bow["x"]
     beta_prime = bow["beta_prime"]
     alpha = bow["alpha"]
@@ -83,7 +83,7 @@ def calculate_design_ice_load(length, width, deadweight_ui, polar_class):
     Dui = bow["Dui"]
 
     # (a) Calculate fai
-    fai1 = (0.097 - 0.68 * ((x / length - 0.15) ** 2)) * alpha / (beta_prime ** 0.5)
+    fai1 = (0.097 - 0.68 * ((x / length_ui - 0.15) ** 2)) * alpha / (beta_prime ** 0.5)
     fai2 = 1.2 * CFF / (sin(radians(beta_prime)) * CFC * Dui ** 0.64)
     fai3 = 0.60
     fai = min(fai1, fai2, fai3)
@@ -106,13 +106,13 @@ def calculate_design_ice_load(length, width, deadweight_ui, polar_class):
     bow["Qi"] = Qi
     bow["Pi"] = Pi
 
-    # Step 5: Calculate design load patch
+    # Step 4: Calculate design load patch
     b = Fi / Qi
     w = Qi / Pi
     bow["b"] = b
     bow["w"] = w
 
-    # Step 6: Calculate design average pressure (Pavg)
+    # Step 5: Calculate design average pressure (Pavg)
     Pavg = Fi / (b * w)
 
     # Print results
@@ -161,10 +161,18 @@ if __name__ == "__main__":
         
         # Design ice load
         elif choice == "2":
-            length = get_valid_input("\nEnter the ship length (L) in meters: ")
-            width = get_valid_input("Enter the ship width in meters: ")
-            deadweight_ui = get_valid_input("Enter the ship's deadweight (D in kt) at Upper Ice Waterline (UIWL): ")
-            polar_class = input("Enter the Polar Class (PC1, PC2, PC3, PC4, PC5, PC6, or PC7): ")
-            calculate_design_ice_load(length, width, deadweight_ui, polar_class)
+            length_ui = get_valid_input("\nEnter the ship's upper ice waterline length (Lui) in meters: ")
+            deadweight_ui = get_valid_input("Enter the ship's deadweight (Dui in kt) at Upper Ice Waterline (UIWL): ")
+            
+            while True:
+                polar_class = input("Enter the Polar Class (PC1, PC2, PC3, PC4, PC5, PC6, or PC7): ")
+                if polar_class in {"PC1", "PC2", "PC3", "PC4", "PC5", "PC6", "PC7"}:
+                    break
+                print("Not acceptable Polar Class. Polar Class should be between PC1 - PC7")
+            
+            beta_prime = get_valid_input("Enter the normal frame angle at upper ice waterline for the Bow (β' in degrees):")
+            alpha =  get_valid_input("Enter the upper ice waterline angle for the Bow (α in degrees): ")
+            gamma = get_valid_input("Enter the buttock angle at upper ice waterline for the Bow (γ in degrees): ")
+            calculate_design_ice_load(length_ui, deadweight_ui, polar_class, beta_prime, alpha, gamma)
         else:
             print("Invalid choice. Please select option 0, 1, or 2.")
