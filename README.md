@@ -14,7 +14,7 @@ Clone the repository to your local machine:
 
 Navigate to the project directory:
 
-cd ice-resistance-design-load-calculator
+>cd ice-resistance-design-load-calculator
 
 ## Usage
 
