@@ -20,7 +20,7 @@ Navigate to the project directory:
 
 Run the Python script:
 
-```python ice_resistance_design_load_calculator.py```
+```python calculations.py```
 
 Follow the prompts to input the necessary parameters for either calculating level ice resistance or design ice load.
 
