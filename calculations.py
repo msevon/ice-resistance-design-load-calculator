@@ -132,7 +132,7 @@ if __name__ == "__main__":
         print("\nOptions:")
         print("0: End program")
         print("1: Calculate level ice resistance")
-        print("2: Calculate design ice load")
+        print("2: Calculate design ice load at bow")
 
         choice = input()
         
