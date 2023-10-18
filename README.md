@@ -1,37 +1,27 @@
-# Icebreaker design calculations
-
-This repository contains Rust code for performing essential calculations relevant to icebreaker design. These calculations include determining level ice resistance, design ice load, and ice belt plate thickness, among others.
+# Ice resistance and design load calculator
+This repository contains Python code for performing calculations related to ice resistance and design ice load for ships operating in icy conditions. The calculations are based on Lindqvist's method for ice resistance and the IACS Polar Class Rules for design ice load calculations.
 
 ## Prerequisites
-
-- [Rust](https://www.rust-lang.org/tools/install): Ensure Rust is installed on your system.
+Before using this code, make sure you have Python installed on your system.
 
 ## Installation
+Clone the repository to your local machine:
 
-1. Clone the repository to your local machine:
-    
-        git clone https://github.com/msevon/icebreaker_design_calculations.git
-   
-3. Navigate to the project directory:
+git clone https://github.com/yourusername/ice-resistance-design-load-calculator.git
 
-        cd icebreaker_design_calculations
-   
-3. Build the Rust project:
+Navigate to the project directory:
 
-        cargo build --release
+cd ice-resistance-design-load-calculator
 
 ## Usage
+Run the Python script:
 
-Run the compiled program:
-    
-    cargo run --release
+python ice_resistance_design_load_calculator.py
 
-Follow the prompts to input the necessary parameters for your icebreaker design.
+Follow the prompts to input the necessary parameters for either calculating level ice resistance or design ice load.
 
 The program will perform the calculations and display the results.
 
 ## Features
-
 Level ice resistance calculation
 Design ice load calculation
-Ice belt plate thickness calculation
