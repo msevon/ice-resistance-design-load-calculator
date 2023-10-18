@@ -10,11 +10,11 @@ Before using this code, make sure you have Python installed on your system.
 
 Clone the repository to your local machine:
 
-git clone https://github.com/yourusername/ice-resistance-design-load-calculator.git
+>git clone https://github.com/yourusername/ice-resistance-design-load-calculator.git
 
 Navigate to the project directory:
 
- cd ice-resistance-design-load-calculator
+> cd ice-resistance-design-load-calculator
 
 ## Usage
 
