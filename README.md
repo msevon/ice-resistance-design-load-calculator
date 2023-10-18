@@ -14,13 +14,13 @@ Clone the repository to your local machine:
 
 Navigate to the project directory:
 
-> cd ice-resistance-design-load-calculator
+cd ice-resistance-design-load-calculator
 
 ## Usage
 
 Run the Python script:
 
-python ice_resistance_design_load_calculator.py
+>python ice_resistance_design_load_calculator.py
 
 Follow the prompts to input the necessary parameters for either calculating level ice resistance or design ice load.
 
