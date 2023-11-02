@@ -147,9 +147,9 @@ if __name__ == "__main__":
             b = get_valid_input("Enter the breadth of the ship (m): ")
             t = get_valid_input("Enter the draft of the ship (m): ")
             v = get_valid_input("Enter the ship speed (kn): ")
-            phi = get_valid_input("Enter the angle (trim) in degrees: ")
-            psi = get_valid_input("Enter the angle (ship keel - direction of motion) in degrees: ")
-            alpha = get_valid_input("Enter the angle (ship side - waterline) in degrees: ")
+            phi = get_valid_input("Enter the angle (phi: trim) in degrees: ")
+            psi = get_valid_input("Enter the angle (psi: ship side - waterline) in degrees: ")
+            alpha = get_valid_input("Enter the angle (alpha: ship keel - direction of motion) in degrees: ")
             h_ice = get_valid_input("Enter the ice thickness in cm: ") / 100.0
 
             if h_ice > 0.0:
