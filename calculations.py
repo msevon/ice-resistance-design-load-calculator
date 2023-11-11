@@ -17,7 +17,7 @@ def calculate_lindqvist_components(L, B, T, phi, psi, alpha, h_ice):
         (MU_H * math.cos(math.radians(phi))) / (math.sin(math.radians(alpha)) * math.cos(math.radians(psi)))) * (1.0 + 1.0 / math.cos(math.radians(psi)))
 
     rs = (RHO_W - RHO_I) * G * h_ice * B * ((T * (B + T)) / (B + 2.0 * T) +
-        MU_H * (0.7 * L - T / math.tan(math.radians(phi)) - B / (4.0 * math.tan(math.radians(alpha)) + T * math.cos(math.radians(phi)) * math.cos(math.radians(psi)) * sqrt(1.0 / math.sin(math.radians(phi))**2 + 1.0 / math.tan(math.radians(alpha))**2))))
+        MU_H * (0.7 * L - T / math.tan(math.radians(phi)) - B / (4.0 * math.tan(math.radians(alpha)) + T * math.cos(math.radians(phi)) * math.cos(math.radians(psi)) * math.sqrt(1.0 / math.sin(math.radians(phi))**2 + 1.0 / math.tan(math.radians(alpha))**2))))
 
     return rc, rb, rs
 
